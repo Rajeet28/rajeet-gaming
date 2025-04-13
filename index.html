@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,11 +8,11 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0e0e0e;
-      color: #f0f0f0;
+      background-color: #ffffff;
+      color: #333;
     }
     header {
-      background-color: #1a1a1a;
+      background-color: #f5f5f5;
       padding: 20px;
       text-align: center;
     }
@@ -23,11 +24,11 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      background-color: #121212;
+      background-color: #eeeeee;
       padding: 10px 0;
     }
     nav a {
-      color: #ccc;
+      color: #333;
       margin: 0 15px;
       text-decoration: none;
       transition: color 0.3s ease;
@@ -50,15 +51,6 @@
       flex-direction: column;
       align-items: center;
     }
-    iframe {
-      width: 100%;
-      height: 200px;
-      border: none;
-      transition: transform 0.3s ease;
-    }
-    iframe:hover {
-      transform: scale(1.03);
-    }
     .video-id {
       font-size: 0.9rem;
       color: #00bcd4;
@@ -72,7 +64,7 @@
       text-decoration: underline;
     }
     .footer {
-      background-color: #1a1a1a;
+      background-color: #f5f5f5;
       text-align: center;
       padding: 20px;
       color: #777;
@@ -88,37 +80,40 @@
   <header>
     <h1>Rajeet's MLBB Zone</h1>
     <p>Your hub for gameplay, guides, and more</p>
-  </header>  <nav>
+  </header>  
+  <nav>
     <a href="#videos">Videos</a>
     <a href="#guides">Hero Guides</a>
     <a href="#tierlist">Tier List</a>
     <a href="#contact">Contact</a>
-  </nav>  <section id="videos" class="section">
+  </nav>  
+  <section id="videos" class="section">
     <h2>Latest Gameplays</h2>
     <div class="video-grid">
       <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/7QVCcmo1xUk" allowfullscreen></iframe>
-        <p class="video-id">ID: <a href="https://www.youtube.com/watch?v=7QVCcmo1xUk" target="_blank">7QVCcmo1xUk</a></p>
+        <p><a href="https://www.youtube.com/watch?v=7QVCcmo1xUk" target="_blank">Watch Gameplay: ID 7QVCcmo1xUk</a></p>
       </div>
       <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/UW03FyXAo78" allowfullscreen></iframe>
-        <p class="video-id">ID: <a href="https://www.youtube.com/watch?v=UW03FyXAo78" target="_blank">UW03FyXAo78</a></p>
+        <p><a href="https://www.youtube.com/watch?v=UW03FyXAo78" target="_blank">Watch Gameplay: ID UW03FyXAo78</a></p>
       </div>
       <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/nYACVSZL0b0" allowfullscreen></iframe>
-        <p class="video-id">ID: <a href="https://www.youtube.com/watch?v=nYACVSZL0b0" target="_blank">nYACVSZL0b0</a></p>
+        <p><a href="https://www.youtube.com/watch?v=nYACVSZL0b0" target="_blank">Watch Gameplay: ID nYACVSZL0b0</a></p>
       </div>
     </div>
-  </section>  <section id="guides" class="section">
+  </section>  
+  <section id="guides" class="section">
     <h2>Hero Guides</h2>
     <p>Coming soon: builds, tips, and how to dominate the battlefield!</p>
-  </section>  <section id="tierlist" class="section">
+  </section>  
+  <section id="tierlist" class="section">
     <h2>MLBB Tier List</h2>
     <p>Our latest rankings of top-tier heroes (updated regularly)</p>
-  </section>  <section id="contact" class="section">
+  </section>  
+  <section id="contact" class="section">
     <h2>Get in Touch</h2>
     <p>Follow me on social media or drop feedback on YouTube!</p>
-  </section>  <div class="footer">
+  </section>  
+  <div class="footer">
     &copy; 2025 Rajeet Gurung | MLBB Content Hub
   </div>
 </body>
