@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rajeet's MLBB Zone - Your hub for Mobile Legends gameplay, hero guides, tier lists, and more." />
-  <meta name="keywords" content="Mobile Legends, MLBB, gameplay, hero guides, tier list, Rajeet Gurung" />
+  <meta name="description" content="Rajeet's MLBB Zone - Your hub for Mobile Legends gameplay, hero guides, tier lists, and hero-specific videos." />
+  <meta name="keywords" content="Mobile Legends, MLBB, gameplay, hero guides, tier list, MLBB heroes, Rajeet Gurung" />
   <meta name="author" content="Rajeet Gurung" />
   <title>Rajeet's MLBB Zone</title>
-
-  
 
   <!-- Font Awesome for social media icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -58,7 +56,7 @@
       padding: 40px 20px;
       text-align: center;
     }
-    .video-grid {
+    .video-grid, .hero-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
@@ -66,7 +64,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    .video-item {
+    .video-item, .hero-item {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -75,16 +73,16 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .video-id {
+    .video-id, .hero-id {
       font-size: 0.9rem;
       color: #00bcd4;
       margin-top: 8px;
     }
-    .video-id a {
+    .video-id a, .hero-id a {
       color: #00bcd4;
       text-decoration: none;
     }
-    .video-id a:hover {
+    .video-id a:hover, .hero-id a:hover {
       text-decoration: underline;
     }
     .footer {
@@ -103,7 +101,7 @@
     }
     @media (max-width: 600px) {
       iframe {
-        height: 400px; /* Adjusted for YouTube Shorts */
+        height: 400px; /* Optimized for YouTube Shorts */
       }
       header h1 {
         font-size: 1.8rem;
@@ -114,7 +112,7 @@
     }
     @media (min-width: 600px) {
       iframe {
-        height: 500px; /* Adjusted for YouTube Shorts */
+        height: 500px; /* Optimized for YouTube Shorts */
       }
     }
 
@@ -150,28 +148,46 @@
       background-color: #0097a7;
     }
 
-    /* AdSense Container */
-    .ads-container {
+    /* Hero Dropdown Styles */
+    .hero-selector {
       margin: 20px auto;
-      max-width: 100%;
+      max-width: 300px;
+    }
+    .hero-selector select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #00bcd4;
+      border-radius: 6px;
+      background: #fff;
+      color: #333;
+    }
+    .hero-selector select:focus {
+      outline: none;
+      border-color: #0097a7;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Rajeet's MLBB Zone</h1>
-    <p>Your hub for Mobile Legends gameplay, guides, and more</p>
+    <p>Your hub for Mobile Legends gameplay, guides, and hero-specific videos</p>
   </header>  
 
   <nav aria-label="Main navigation">
+    <a href="#home">Home</a>
     <a href="#videos">Videos</a>
     <a href="#guides">Hero Guides</a>
     <a href="#tierlist">Tier List</a>
+    <a href="#heroes">MLBB Heroes</a>
     <a href="#contact">Contact</a>
   </nav>  
 
-    
-  </div>
+  <section id="home" class="section" aria-labelledby="home-heading">
+    <h2 id="home-heading">Welcome to Rajeet's MLBB Zone</h2>
+    <p>Explore top-tier Mobile Legends gameplay, hero guides, tier lists, and more! Choose your favorite hero to watch exclusive videos.</p>
+    <a href="#videos" class="youtube-btn">Watch Latest Videos</a>
+  </section>
 
   <section id="videos" class="section" aria-labelledby="videos-heading">
     <h2 id="videos-heading">Latest Gameplays</h2>
@@ -180,21 +196,27 @@
       <button class="youtube-btn">Visit My YouTube Channel</button>
     </a>
     <div class="video-grid">
-      <!-- Video 1 Embed -->
+      <!-- Video 1: Gusion Gameplay -->
       <div class="video-item">
-        <iframe width="100%" height="500" src="https://www.youtube.com/embed/oUG3cwqbYeI" title="MLBB Gameplay Short 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/BwTu056Xx_Q" title="Gusion Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-id">
+          <a href="https://www.youtube.com/watch?v=BwTu056Xx_Q" target="_blank">Watch on YouTube</a>
+        </div>
+      </div>
+      <!-- Video 2: Selena Gameplay -->
+      <div class="video-item">
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/oUG3cwqbYeI" title="Selena Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="video-id">
           <a href="https://www.youtube.com/watch?v=oUG3cwqbYeI" target="_blank">Watch on YouTube</a>
         </div>
       </div>
-      <!-- Video 2 Embed -->
+      <!-- Video 3: Natalia Gameplay -->
       <div class="video-item">
-        <iframe width="100%" height="500" src="https://www.youtube.com/embed/7QVCcmo1xUk" title="MLBB Gameplay Short 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/UW03FyXAo78" title="Natalia Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="video-id">
-          <a href="https://www.youtube.com/watch?v=7QVCcmo1xUk" target="_blank">Watch on YouTube</a>
+          <a href="https://www.youtube.com/watch?v=UW03FyXAo78" target="_blank">Watch on YouTube</a>
         </div>
       </div>
-      <!-- Add more video items as needed -->
     </div>
   </section>  
 
@@ -205,8 +227,6 @@
     <a href="https://www.youtube.com/@RajeetGurung" target="_blank">
       <button class="youtube-btn">Watch Hero Gameplay</button>
     </a>
-
-    
   </section>  
 
   <section id="tierlist" class="section" aria-labelledby="tierlist-heading">
@@ -214,6 +234,56 @@
     <p>Our latest rankings of top-tier heroes, updated regularly to help you stay competitive.</p>
     <p>Stay tuned for a detailed tier list with hero rankings and tips!</p>
   </section>  
+
+  <section id="heroes" class="section" aria-labelledby="heroes-heading">
+    <h2 id="heroes-heading">MLBB Heroes</h2>
+    <p>Select your favorite hero to watch exclusive gameplay videos!</p>
+    <!-- Hero Dropdown -->
+    <div class="hero-selector">
+      <select onchange="if(this.value) window.open(this.value, '_blank');">
+        <option value="">Choose a Hero</option>
+        <option value="https://www.youtube.com/watch?v=BwTu056Xx_Q">Gusion</option>
+        <option value="https://www.youtube.com/watch?v=oUG3cwqbYeI">Selena</option>
+        <option value="https://www.youtube.com/watch?v=UW03FyXAo78">Natalia</option>
+        <option value="#">Lancelot (Coming Soon)</option>
+        <option value="#">Karina (Coming Soon)</option>
+        <option value="#">Hayabusa (Coming Soon)</option>
+        <option value="#">Alucard (Coming Soon)</option>
+        <option value="#">Miya (Coming Soon)</option>
+        <option value="#">Tigreal (Coming Soon)</option>
+        <option value="#">Akai (Coming Soon)</option>
+        <!-- Add more heroes as needed -->
+      </select>
+    </div>
+    <!-- Popular Heroes Grid -->
+    <h3>Popular Heroes</h3>
+    <div class="hero-grid">
+      <div class="hero-item">
+        <h4>Gusion</h4>
+        <a href="https://www.youtube.com/watch?v=BwTu056Xx_Q" target="_blank" class="youtube-btn">Watch Gameplay</a>
+      </div>
+      <div class="hero-item">
+        <h4>Selena</h4>
+        <a href="https://www.youtube.com/watch?v=oUG3cwqbYeI" target="_blank" class="youtube-btn">Watch Gameplay</a>
+      </div>
+      <div class="hero-item">
+        <h4>Natalia</h4>
+        <a href="https://www.youtube.com/watch?v=UW03FyXAo78" target="_blank" class="youtube-btn">Watch Gameplay</a>
+      </div>
+      <div class="hero-item">
+        <h4>Lancelot</h4>
+        <p>Coming Soon</p>
+      </div>
+      <div class="hero-item">
+        <h4>Karina</h4>
+        <p>Coming Soon</p>
+      </div>
+      <div class="hero-item">
+        <h4>Hayabusa</h4>
+        <p>Coming Soon</p>
+      </div>
+    </div>
+  </section>
 
   <section id="contact" class="section" aria-labelledby="contact-heading">
     <h2 id="contact-heading">Get in Touch</h2>
@@ -225,9 +295,6 @@
       <a href="https://youtube.com/@rajeetgurung" target="_blank" aria-label="Subscribe on YouTube"><i class="fab fa-youtube" title="YouTube"></i></a>
     </div>
   </section>  
-
-  
-  </div>
 
   <footer class="footer">
     <p>© 2025 Rajeet Gurung | MLBB Content Hub | <a href="privacy.html">Privacy Policy</a></p>
