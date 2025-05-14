@@ -8,21 +8,33 @@
   <meta name="author" content="Rajeet Gurung" />
   <title>Rajeet's MLBB Zone</title>
 
-  <!-- Font Awesome for social media and email icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome for social media and menu icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
+    /* Animated Colorful Background */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
       color: #333;
       line-height: 1.6;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 25%, #fbc2eb 50%, #a1c4fd 75%, #c2ffd8 100%);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
     }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
     header {
-      background-color: #f5f5f5;
+      background-color: rgba(245,245,245,0.95);
       padding: 20px;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
     header h1 {
       color: #00bcd4;
@@ -34,13 +46,69 @@
       font-size: 1.1rem;
       color: #555;
     }
+
+    /* Hamburger Menu */
+    .hamburger {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 1001;
+      color: #333;
+      background: rgba(255,255,255,0.8);
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .hamburger:hover, .hamburger:focus {
+      background: #e0f7fa;
+      outline: none;
+    }
+
+    /* Settings Menu */
+    .settings-menu {
+      display: none;
+      position: absolute;
+      top: 65px;
+      right: 25px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 10px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+      z-index: 1002;
+      min-width: 200px;
+      animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .settings-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 12px 0;
+    }
+    .settings-menu li {
+      padding: 14px 28px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+      color: #333;
+    }
+    .settings-menu li:hover {
+      background: #e0f7fa;
+      color: #00bcd4;
+    }
+
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      background-color: #eeeeee;
+      background-color: rgba(238,238,238,0.95);
       padding: 10px 0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
     nav a {
       color: #333;
@@ -55,6 +123,10 @@
     .section {
       padding: 40px 20px;
       text-align: center;
+      background: rgba(255,255,255,0.85);
+      margin: 30px 10px;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
     }
     .video-grid, .hero-grid {
       display: grid;
@@ -86,11 +158,13 @@
       text-decoration: underline;
     }
     .footer {
-      background-color: #f5f5f5;
+      background-color: rgba(245,245,245,0.95);
       text-align: center;
       padding: 20px;
       color: #777;
       font-size: 0.9rem;
+      border-radius: 0 0 16px 16px;
+      margin: 30px 10px 10px 10px;
     }
     .footer a {
       color: #00bcd4;
@@ -108,6 +182,14 @@
       }
       nav a {
         margin: 8px 10px;
+      }
+      .section {
+        margin: 15px 2px;
+        padding: 20px 3px;
+      }
+      .footer {
+        margin: 15px 2px 2px 2px;
+        border-radius: 0 0 10px 10px;
       }
     }
     @media (min-width: 600px) {
@@ -143,6 +225,8 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-top: 10px;
+      margin-bottom: 5px;
     }
     .youtube-btn:hover {
       background-color: #0097a7;
@@ -172,6 +256,19 @@
   <header>
     <h1>Rajeet's MLBB Zone</h1>
     <p>Your hub for Mobile Legends gameplay, guides, and hero-specific videos</p>
+    <!-- Hamburger menu icon -->
+    <div class="hamburger" onclick="toggleSettingsMenu()" aria-label="Open settings" tabindex="0">
+      <i class="fas fa-bars"></i>
+    </div>
+    <!-- Settings menu -->
+    <div class="settings-menu" id="settingsMenu" aria-label="Settings menu">
+      <ul>
+        <li onclick="alert('Theme settings coming soon!')"><i class="fas fa-palette" style="margin-right:10px;"></i>Theme</li>
+        <li onclick="alert('Notifications coming soon!')"><i class="fas fa-bell" style="margin-right:10px;"></i>Notifications</li>
+        <li onclick="alert('About this site: Rajeet\'s MLBB Zone!')"><i class="fas fa-info-circle" style="margin-right:10px;"></i>About</li>
+        <li onclick="alert('Help section coming soon!')"><i class="fas fa-question-circle" style="margin-right:10px;"></i>Help</li>
+      </ul>
+    </div>
   </header>  
 
   <nav aria-label="Main navigation">
@@ -300,5 +397,28 @@
   <footer class="footer">
     <p>© 2025 Rajeet Gurung | MLBB Content Hub | <a href="privacy.html">Privacy Policy</a></p>
   </footer>
+
+  <!-- Hamburger & Settings Menu JS -->
+  <script>
+    function toggleSettingsMenu() {
+      const menu = document.getElementById('settingsMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('settingsMenu');
+      const hamburger = document.querySelector('.hamburger');
+      if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+    // Keyboard accessibility for hamburger (Enter/Space)
+    document.querySelector('.hamburger').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleSettingsMenu();
+      }
+    });
+  </script>
 </body>
 </html>
