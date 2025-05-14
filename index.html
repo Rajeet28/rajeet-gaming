@@ -31,6 +31,18 @@
       color: var(--main-color);
       margin: 0;
       padding: 0;
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    section h2, .header-section h1 {
+      font-size: 1.15rem;
+    }
+    .card h3 {
+      font-size: 1rem;
+    }
+    input, textarea, select, label, .youtube-btn, .submit-btn {
+      font-size: 0.97rem;
     }
 
     /* Kazuki-Style Header and Navigation */
@@ -47,7 +59,7 @@
     }
     .site-logo {
       font-family: var(--main-font);
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       color: var(--accent);
       text-decoration: none;
       font-weight: bold;
@@ -123,7 +135,7 @@
     }
     .main-nav a {
       font-family: var(--main-font);
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       color: var(--main-color);
       text-decoration: none;
       font-weight: bold;
@@ -160,7 +172,7 @@
         margin: 0;
       }
       .main-nav a {
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: normal;
       }
     }
@@ -168,7 +180,7 @@
     /* Header Section */
     .header-section {
       background: var(--header-bg);
-      padding: 45px 20px 28px 20px;
+      padding: 36px 20px 20px 20px;
       text-align: center;
       border-radius: 0 0 var(--border-radius) var(--border-radius);
       box-shadow: 0 2px 10px rgba(70,130,180,0.04);
@@ -176,14 +188,14 @@
     }
     .header-section h1 {
       margin: 0 0 10px 0;
-      font-size: 2.2rem;
+      font-size: 1.15rem;
       font-weight: bold;
       letter-spacing: 1px;
       color: var(--accent);
     }
     .header-section p {
       margin: 0;
-      font-size: 1.15rem;
+      font-size: 1rem;
       color: #444;
     }
 
@@ -198,13 +210,13 @@
     .section-inner {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 32px 12px;
+      padding: 28px 8px;
       border-radius: var(--border-radius);
       box-shadow: var(--card-shadow);
     }
     section h2 {
       margin-top: 0;
-      font-size: 1.5rem;
+      font-size: 1.15rem;
       color: var(--accent);
       letter-spacing: 0.5px;
     }
@@ -212,25 +224,25 @@
     /* Card Grid */
     .content-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-top: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
     }
     .card {
       background: #fff;
       border-radius: var(--border-radius);
       box-shadow: var(--card-shadow);
-      padding: 18px 12px 14px 12px;
+      padding: 14px 8px 10px 8px;
       text-align: center;
       transition: box-shadow 0.2s;
     }
     .card h3 {
-      margin: 0 0 8px 0;
-      font-size: 1.1rem;
+      margin: 0 0 6px 0;
+      font-size: 1rem;
       color: var(--accent);
     }
     .card p {
-      margin: 0 0 8px 0;
+      margin: 0 0 6px 0;
       color: #555;
     }
     .youtube-btn {
@@ -239,10 +251,10 @@
       color: #fff;
       border: none;
       border-radius: 6px;
-      padding: 8px 18px;
-      font-size: 1rem;
+      padding: 7px 14px;
+      font-size: 0.97rem;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 7px;
       text-decoration: none;
       transition: background 0.2s;
     }
@@ -250,37 +262,59 @@
       background: #315c7a;
     }
 
+    /* Hero Dropdown */
+    .hero-selector {
+      max-width:320px;
+      margin:0 auto 14px auto;
+      text-align:center;
+    }
+    .hero-selector select {
+      width:100%;
+      padding:8px 10px;
+      border:1.5px solid #e0e0e0;
+      border-radius:6px;
+      background:#fff;
+      color:#232323;
+      font-family:'Times New Roman',Times,serif;
+      font-size:0.97rem;
+      transition: border 0.2s;
+    }
+    .hero-selector select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
     /* Query Form */
     .query-form {
       max-width: 400px;
       margin: 0 auto;
       background: #fff;
-      padding: 24px 12px 14px 12px;
+      padding: 18px 8px 10px 8px;
       border-radius: var(--border-radius);
       box-shadow: var(--card-shadow);
     }
     .query-form h2 {
-      margin-bottom: 14px;
-      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
       color: var(--accent);
     }
     .form-group {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       text-align: left;
     }
     .form-group label {
       display: block;
-      margin-bottom: 5px;
-      font-size: 1rem;
+      margin-bottom: 4px;
+      font-size: 0.97rem;
       color: #333;
     }
     input, textarea, select {
       width: 100%;
-      padding: 8px;
+      padding: 7px;
       border: 1px solid #d5d5d5;
       border-radius: 6px;
       font-family: var(--main-font);
-      font-size: 1rem;
+      font-size: 0.97rem;
       background: #f9f9f9;
       color: #232323;
       box-sizing: border-box;
@@ -289,12 +323,12 @@
     .submit-btn {
       background: var(--accent);
       color: white;
-      padding: 10px 24px;
+      padding: 8px 18px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 1rem;
-      margin-top: 7px;
+      font-size: 0.97rem;
+      margin-top: 6px;
       transition: background 0.2s;
     }
     .submit-btn:hover {
@@ -302,20 +336,20 @@
     }
     .form-success {
       color: #2e8b57;
-      margin-top: 12px;
-      font-size: 1rem;
+      margin-top: 10px;
+      font-size: 0.97rem;
       text-align: center;
     }
 
     /* Social Links */
     .social-links {
       text-align: center;
-      margin: 24px 0 0 0;
+      margin: 18px 0 0 0;
     }
     .social-links a {
-      margin: 0 10px;
+      margin: 0 8px;
       color: var(--accent);
-      font-size: 26px;
+      font-size: 22px;
       display: inline-block;
       transition: color 0.2s;
     }
@@ -327,21 +361,21 @@
     .footer {
       background: var(--footer-bg);
       text-align: center;
-      padding: 20px 10px 10px 10px;
+      padding: 14px 5px 8px 5px;
       color: #777;
-      font-size: 1rem;
+      font-size: 0.97rem;
       border-radius: var(--border-radius) var(--border-radius) 0 0;
-      margin-top: 30px;
+      margin-top: 20px;
     }
     .footer .certified {
       color: var(--accent);
       font-weight: bold;
-      margin-left: 8px;
+      margin-left: 6px;
     }
     .footer a {
       color: var(--accent);
       text-decoration: none;
-      margin-left: 6px;
+      margin-left: 5px;
     }
     .footer a:hover {
       text-decoration: underline;
@@ -349,9 +383,9 @@
 
     /* Responsive */
     @media (max-width: 700px) {
-      .header-section h1 { font-size: 1.4rem;}
-      .section-inner { padding: 16px 2px;}
-      .query-form { padding: 12px 2px;}
+      .header-section h1 { font-size: 1rem;}
+      .section-inner { padding: 10px 2px;}
+      .query-form { padding: 8px 2px;}
     }
   </style>
 </head>
@@ -425,6 +459,18 @@
   <section class="heroes-section" id="heroes">
     <div class="section-inner">
       <h2>MLBB Heroes</h2>
+      <!-- Hero Selection Dropdown -->
+      <div class="hero-selector">
+        <select>
+          <option value="">Choose a Hero to Watch Gameplay</option>
+          <option value="https://www.youtube.com/watch?v=BwTu056Xx_Q">Gusion</option>
+          <option value="https://www.youtube.com/watch?v=oUG3cwqbYeI">Selena</option>
+          <option value="https://www.youtube.com/watch?v=UW03FyXAo78">Natalia</option>
+          <option value="#">Lancelot (Coming Soon)</option>
+          <option value="#">Karina (Coming Soon)</option>
+          <option value="#">Hayabusa (Coming Soon)</option>
+        </select>
+      </div>
       <div class="content-grid">
         <div class="card">
           <h3>Gusion</h3>
@@ -510,6 +556,11 @@
         e.preventDefault();
         document.getElementById('nav-toggle').checked = !document.getElementById('nav-toggle').checked;
       }
+    });
+
+    // Hero dropdown: open gameplay in new tab
+    document.querySelector('.hero-selector select').addEventListener('change', function() {
+      if(this.value && this.value !== "#") window.open(this.value, '_blank');
     });
 
     // Simple Query Form Submission (simulate)
