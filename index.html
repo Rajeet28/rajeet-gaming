@@ -3,98 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EpicGaming Hub</title>
-  <meta name="description" content="EpicGaming Hub - Your ultimate source for game reviews, news, live streams, and community discussions." />
-  <meta name="keywords" content="gaming, game reviews, gaming news, live streams, video games, community, walkthroughs" />
-  <meta name="author" content="Your Name / EpicGaming Hub" />
+  <title>Rajeet's MLBB Zone</title>
+  <meta name="description" content="Rajeet's MLBB Zone - Your hub for Mobile Legends gameplay, hero guides, tier lists, and hero-specific videos." />
+  <meta name="keywords" content="Mobile Legends, MLBB, gameplay, hero guides, tier list, MLBB heroes, Rajeet Gurung" />
+  <meta name="author" content="Rajeet Gurung" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
 
   <style>
-    /* New Gaming-Themed Color Palette */
     :root {
-      --dark-blue: #1a2a3a; /* Main background / Dark accents */
-      --medium-blue: #2c425a; /* Section backgrounds */
-      --accent-red: #e74c3c; /* Bright accent for buttons/highlights */
-      --light-text: #ecf0f1; /* Light text for dark backgrounds */
-      --header-bg: #111e2a; /* Even darker header */
-      --card-bg: #34495e; /* Card background */
-      --card-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      --border-radius: 10px;
-      --menu-shadow: 0 4px 18px rgba(0,0,0,0.4);
-      --main-font: 'Oxanium', cursive; /* Energetic gaming font */
-      --secondary-font: 'Roboto', sans-serif; /* Readable body font */
-      --footer-bg: #111e2a;
+      --blue: #e3f0ff;
+      --orange: #fff4e3;
+      --pink: #ffe3ec;
+      --green: #e3ffe9;
+      --header-bg: #f0f8ff;
+      --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --border-radius: 14px;
+      --menu-shadow: 0 2px 12px rgba(0,0,0,0.13);
+      --main-font: 'Times New Roman', Times, serif;
+      --main-color: #232323;
+      --accent: #4682B4;
+      --footer-bg: #f0f8ff;
     }
 
     body {
-      font-family: var(--secondary-font);
-      background: var(--dark-blue);
-      color: var(--light-text);
+      font-family: var(--main-font);
+      background: #f7fafd;
+      color: var(--main-color);
       margin: 0;
       padding: 0;
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 15px;
+      font-weight: 400;
     }
 
-    /* Typography adjustments for gaming feel */
-    h1, h2, h3 {
-      font-family: var(--main-font);
-      color: var(--accent-red);
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
-    section h2 {
-      font-size: 1.8rem;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .header-section h1 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
+    section h2, .header-section h1 {
+      font-size: 1.15rem;
     }
     .card h3 {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
-    input, textarea, select, label, .action-btn {
-      font-size: 0.95rem;
-    }
-    p {
-      font-family: var(--secondary-font);
+    input, textarea, select, label, .youtube-btn, .submit-btn {
+      font-size: 0.97rem;
     }
 
-
-    /* Header and Navigation (Kazuki-Style adapted) */
+    /* Kazuki-Style Header and Navigation */
     .main-header {
-      position: sticky; /* Sticky header */
-      top: 0;
+      position: relative;
       width: 100%;
       background: var(--header-bg);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 25px;
-      height: 70px;
+      padding: 0 18px;
+      height: 60px;
       z-index: 1002;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
     .site-logo {
       font-family: var(--main-font);
-      font-size: 1.5rem;
-      color: var(--accent-red);
+      font-size: 1.1rem;
+      color: var(--accent);
       text-decoration: none;
       font-weight: bold;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      letter-spacing: 1px;
     }
     .nav-toggle {
       display: none;
     }
     .nav-toggle-label {
       display: block;
-      width: 38px;
-      height: 38px;
+      width: 34px;
+      height: 34px;
       cursor: pointer;
       position: relative;
       z-index: 1003;
@@ -104,34 +81,34 @@
     .nav-toggle-label span::before,
     .nav-toggle-label span::after {
       display: block;
-      background: var(--light-text);
-      height: 4px;
-      width: 30px;
+      background: var(--main-color);
+      height: 3px;
+      width: 26px;
       border-radius: 2px;
       position: absolute;
       left: 4px;
       transition: all 0.3s cubic-bezier(.86,0,.07,1);
     }
     .nav-toggle-label span {
-      top: 17px;
+      top: 15px;
     }
     .nav-toggle-label span::before {
       content: '';
-      top: -10px;
+      top: -8px;
     }
     .nav-toggle-label span::after {
       content: '';
-      top: 10px;
+      top: 8px;
     }
     /* Hamburger animation to X */
     .nav-toggle:checked + .nav-toggle-label span {
       background: transparent;
     }
     .nav-toggle:checked + .nav-toggle-label span::before {
-      transform: rotate(-45deg) translate(-5px, 8px);
+      transform: rotate(-45deg) translate(-4px, 7px);
     }
     .nav-toggle:checked + .nav-toggle-label span::after {
-      transform: rotate(45deg) translate(-5px, -8px);
+      transform: rotate(45deg) translate(-4px, -7px);
     }
     /* Overlay menu */
     .main-nav {
@@ -140,7 +117,7 @@
       left: 100vw;
       width: 100vw;
       height: 100vh;
-      background: rgba(17, 30, 42, 0.98); /* Darker overlay */
+      background: rgba(255,255,255,0.98);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -154,31 +131,27 @@
       text-align: center;
     }
     .main-nav li {
-      margin: 22px 0;
+      margin: 18px 0;
     }
     .main-nav a {
       font-family: var(--main-font);
-      font-size: 1.5rem;
-      color: var(--light-text);
+      font-size: 1.1rem;
+      color: var(--main-color);
       text-decoration: none;
       font-weight: bold;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       transition: color 0.2s;
     }
     .main-nav a:hover {
-      color: var(--accent-red);
-      text-shadow: 0 0 10px rgba(231,76,60,0.6);
+      color: var(--accent);
     }
     .nav-toggle:checked ~ .main-nav {
       left: 0;
     }
     @media (min-width: 900px) {
       .main-header {
-        height: 80px;
-        padding: 0 60px;
-      }
-      .site-logo {
-        font-size: 1.8rem;
+        height: 70px;
+        padding: 0 48px;
       }
       .nav-toggle-label {
         display: none;
@@ -193,344 +166,233 @@
       }
       .main-nav ul {
         display: flex;
-        gap: 40px;
+        gap: 30px;
       }
       .main-nav li {
         margin: 0;
       }
       .main-nav a {
-        font-size: 1.1rem;
-        font-weight: 500;
-        letter-spacing: 0.8px;
+        font-size: 1rem;
+        font-weight: normal;
       }
     }
 
-    /* Header Section (Hero Banner) */
+    /* Header Section */
     .header-section {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x400/1a2a3a/ecf0f1?text=EPIC+GAMING+BACKGROUND') no-repeat center center/cover; /* Placeholder background image */
-      padding: 60px 20px;
+      background: var(--header-bg);
+      padding: 36px 20px 20px 20px;
       text-align: center;
-      color: var(--light-text);
       border-radius: 0 0 var(--border-radius) var(--border-radius);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(70,130,180,0.04);
+      margin-bottom: 18px;
     }
     .header-section h1 {
-      margin: 0 0 15px 0;
-      font-size: 2.8rem;
-      color: var(--accent-red);
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      margin: 0 0 10px 0;
+      font-size: 1.15rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: var(--accent);
     }
     .header-section p {
       margin: 0;
-      font-size: 1.2rem;
-      color: #ccc;
-      max-width: 800px;
-      margin: 0 auto;
+      font-size: 1rem;
+      color: #444;
     }
-    .header-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .action-btn {
-      display: inline-block;
-      background: var(--accent-red);
-      color: var(--light-text);
-      border: none;
-      border-radius: 8px;
-      padding: 12px 28px;
-      font-family: var(--main-font);
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-    .action-btn:hover {
-      background: #c0392b; /* Slightly darker red */
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-    }
-    .action-btn.secondary {
-        background: transparent;
-        border: 2px solid var(--accent-red);
-    }
-    .action-btn.secondary:hover {
-        background: rgba(231,76,60,0.1);
-    }
-
 
     /* Section Styles */
     section {
-      margin: 0 0 40px 0;
-      padding: 0 15px;
+      margin: 0 0 28px 0;
     }
-    .reviews-section { background: var(--dark-blue); }
-    .news-section { background: var(--medium-blue); }
-    .streams-section { background: var(--dark-blue); }
-    .games-section { background: var(--medium-blue); }
-    .contact-section { background: var(--dark-blue); }
-
+    .video-section { background: var(--blue);}
+    .guides-section { background: var(--orange);}
+    .heroes-section { background: var(--pink);}
+    .query-section { background: var(--green);}
     .section-inner {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 28px 8px;
       border-radius: var(--border-radius);
-      background: var(--card-bg); /* Use card background for inner section to contrast */
       box-shadow: var(--card-shadow);
     }
-
+    section h2 {
+      margin-top: 0;
+      font-size: 1.15rem;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
 
     /* Card Grid */
     .content-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
     }
     .card {
-      background: var(--dark-blue);
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      overflow: hidden; /* For images */
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    }
-    .card-image {
-      width: 100%;
-      height: 180px;
-      background: #444; /* Placeholder background */
-      margin-bottom: 15px;
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-      overflow: hidden;
-    }
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .card:hover .card-image img {
-      transform: scale(1.05);
-    }
-
-    .card h3 {
-      margin: 0 0 10px 0;
-      color: var(--accent-red);
-    }
-    .card p {
-      margin: 0 0 15px 0;
-      color: #bbb;
-      font-size: 0.95rem;
-    }
-
-    /* Video Embed Specific Styles */
-    .video-embed {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      height: 0;
-      margin-bottom: 15px;
-      border-radius: var(--border-radius);
-      overflow: hidden;
-    }
-    .video-embed iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* Game Selector */
-    .game-selector {
-      max-width: 400px;
-      margin: 0 auto 25px auto;
-      text-align: center;
-    }
-    .game-selector select {
-      width: 100%;
-      padding: 10px 15px;
-      border: 2px solid var(--accent-red);
-      border-radius: 8px;
-      background: var(--dark-blue);
-      color: var(--light-text);
-      font-family: var(--secondary-font);
-      font-size: 1rem;
-      appearance: none; /* Remove default arrow */
-      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%23e74c3c%22%20d%3D%22M7%2010L12%2015L17%2010H7z%22%2F%3E%3C%2Fsvg%3E');
-      background-repeat: no-repeat;
-      background-position: right 15px center;
-      background-size: 12px;
-      transition: border-color 0.2s;
-    }
-    .game-selector select:focus {
-      outline: none;
-      border-color: #f39c12; /* A subtle focus color */
-    }
-
-    /* Contact Form */
-    .contact-form {
-      max-width: 500px;
-      margin: 0 auto;
-      background: var(--dark-blue);
-      padding: 30px;
+      background: #fff;
       border-radius: var(--border-radius);
       box-shadow: var(--card-shadow);
-      color: var(--light-text);
-    }
-    .contact-form h2 {
-      margin-bottom: 20px;
-      font-size: 1.5rem;
+      padding: 14px 8px 10px 8px;
       text-align: center;
-      color: var(--accent-red);
+      transition: box-shadow 0.2s;
+    }
+    .card h3 {
+      margin: 0 0 6px 0;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+    .card p {
+      margin: 0 0 6px 0;
+      color: #555;
+    }
+    .youtube-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 7px 14px;
+      font-size: 0.97rem;
+      cursor: pointer;
+      margin-top: 7px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .youtube-btn:hover {
+      background: #315c7a;
+    }
+
+    /* Hero Dropdown */
+    .hero-selector {
+      max-width:320px;
+      margin:0 auto 14px auto;
+      text-align:center;
+    }
+    .hero-selector select {
+      width:100%;
+      padding:8px 10px;
+      border:1.5px solid #e0e0e0;
+      border-radius:6px;
+      background:#fff;
+      color:#232323;
+      font-family:'Times New Roman',Times,serif;
+      font-size:0.97rem;
+      transition: border 0.2s;
+    }
+    .hero-selector select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    /* Query Form */
+    .query-form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 18px 8px 10px 8px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+    }
+    .query-form h2 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: var(--accent);
     }
     .form-group {
-      margin-bottom: 18px;
+      margin-bottom: 10px;
       text-align: left;
     }
     .form-group label {
       display: block;
-      margin-bottom: 8px;
-      font-size: 1rem;
-      color: var(--light-text);
+      margin-bottom: 4px;
+      font-size: 0.97rem;
+      color: #333;
     }
-    input[type="text"],
-    input[type="email"],
-    textarea,
-    select {
+    input, textarea, select {
       width: 100%;
-      padding: 10px 12px;
-      border: 1px solid var(--medium-blue);
+      padding: 7px;
+      border: 1px solid #d5d5d5;
       border-radius: 6px;
-      font-family: var(--secondary-font);
-      font-size: 1rem;
-      background: var(--medium-blue);
-      color: var(--light-text);
-      box-sizing: border-box;
-      transition: border-color 0.2s;
-    }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus,
-    select:focus {
-      outline: none;
-      border-color: var(--accent-red);
-    }
-    textarea { resize: vertical; min-height: 100px; }
-    .submit-btn {
-      background: var(--accent-red);
-      color: var(--light-text);
-      padding: 12px 25px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
       font-family: var(--main-font);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-top: 15px;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-      display: block;
-      width: 100%;
-      max-width: 250px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      font-size: 0.97rem;
+      background: #f9f9f9;
+      color: #232323;
+      box-sizing: border-box;
+    }
+    textarea { resize: vertical; }
+    .submit-btn {
+      background: var(--accent);
+      color: white;
+      padding: 8px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.97rem;
+      margin-top: 6px;
+      transition: background 0.2s;
     }
     .submit-btn:hover {
-      background: #c0392b;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      background: #315c7a;
     }
     .form-success {
-      color: #2ecc71; /* Green for success */
-      margin-top: 20px;
-      font-size: 1rem;
+      color: #2e8b57;
+      margin-top: 10px;
+      font-size: 0.97rem;
       text-align: center;
-      display: none;
     }
 
     /* Social Links */
     .social-links {
       text-align: center;
-      margin: 30px 0 0 0;
+      margin: 18px 0 0 0;
     }
     .social-links a {
-      margin: 0 12px;
-      color: var(--accent-red);
-      font-size: 28px;
+      margin: 0 8px;
+      color: var(--accent);
+      font-size: 22px;
       display: inline-block;
-      transition: color 0.2s, transform 0.2s;
+      transition: color 0.2s;
     }
     .social-links a:hover {
-      color: var(--light-text);
-      transform: translateY(-3px);
+      color: #222;
     }
 
     /* Footer */
     .footer {
       background: var(--footer-bg);
       text-align: center;
-      padding: 20px 10px 15px 10px;
-      color: #999;
-      font-size: 0.9rem;
+      padding: 14px 5px 8px 5px;
+      color: #777;
+      font-size: 0.97rem;
       border-radius: var(--border-radius) var(--border-radius) 0 0;
-      margin-top: 40px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+      margin-top: 20px;
     }
-    .footer .highlight {
-      color: var(--accent-red);
+    .footer .certified {
+      color: var(--accent);
       font-weight: bold;
       margin-left: 6px;
     }
     .footer a {
-      color: var(--accent-red);
+      color: var(--accent);
       text-decoration: none;
       margin-left: 5px;
-      transition: color 0.2s;
     }
     .footer a:hover {
       text-decoration: underline;
-      color: var(--light-text);
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .header-section h1 { font-size: 2rem;}
-      .header-section p { font-size: 1rem;}
-      section h2 { font-size: 1.5rem; margin-bottom: 20px;}
-      .section-inner { padding: 25px 15px;}
-      .content-grid {
-        grid-template-columns: 1fr; /* Stack cards on small screens */
-      }
-      .card-image { height: 150px; }
-      .main-header { padding: 0 15px; height: 60px;}
-      .site-logo { font-size: 1.2rem;}
-      .nav-toggle-label { width: 34px; height: 34px;}
-      .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after { height: 3px; width: 26px; left: 4px;}
-    }
-
-    @media (max-width: 480px) {
-      .header-section { padding: 40px 15px;}
-      .header-section h1 { font-size: 1.8rem;}
-      .action-btn { padding: 10px 20px; font-size: 1rem;}
-      .header-buttons { flex-direction: column; gap: 15px;}
+    /* Responsive */
+    @media (max-width: 700px) {
+      .header-section h1 { font-size: 1rem;}
+      .section-inner { padding: 10px 2px;}
+      .query-form { padding: 8px 2px;}
     }
   </style>
 </head>
 <body>
+  <!-- Kazuki-Style Main Header and Navigation -->
   <header class="main-header">
-    <a href="#home" class="site-logo">EpicGaming Hub</a>
+    <a href="#home" class="site-logo">Rajeet's MLBB Zone</a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu" />
     <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu" tabindex="0">
       <span></span>
@@ -538,167 +400,178 @@
     <nav class="main-nav">
       <ul>
         <li><a href="#home" onclick="closeMenu()">Home</a></li>
-        <li><a href="#reviews" onclick="closeMenu()">Reviews</a></li>
-        <li><a href="#news" onclick="closeMenu()">News</a></li>
-        <li><a href="#streams" onclick="closeMenu()">Streams</a></li>
-        <li><a href="#games" onclick="closeMenu()">Games</a></li>
-        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        <li><a href="#videos" onclick="closeMenu()">Videos</a></li>
+        <li><a href="#guides" onclick="closeMenu()">Guides</a></li>
+        <li><a href="#heroes" onclick="closeMenu()">Heroes</a></li>
+        <li><a href="#query" onclick="closeMenu()">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Header Section -->
   <header class="header-section" id="home">
-    <h1>Welcome to EpicGaming Hub</h1>
-    <p>Your ultimate destination for everything gaming: in-depth reviews, breaking news, live streams, and a thriving community.</p>
-    <div class="header-buttons">
-        <a href="#reviews" class="action-btn">Read Reviews</a>
-        <a href="#streams" class="action-btn secondary">Watch Streams</a>
-    </div>
+    <h1>Rajeet's MLBB Zone</h1>
+    <p>Your Ultimate Mobile Legends Resource</p>
   </header>
 
-  <section class="reviews-section" id="reviews">
+  <!-- Videos Section -->
+  <section class="video-section" id="videos">
     <div class="section-inner">
-      <h2>Latest Game Reviews</h2>
+      <h2>Latest Gameplays</h2>
       <div class="content-grid">
         <div class="card">
-          <div class="card-image"><img src="https://via.placeholder.com/400x225/34495e/ecf0f1?text=RPG+Game" alt="Screenshot from an RPG game"></div>
-          <h3>The Elder Scrolls: Starfall</h3>
-          <p>An epic new RPG that delivers on all fronts with stunning visuals and an expansive world.</p>
-          <a href="#" class="action-btn">Read Full Review</a>
+          <h3>Gusion Gameplay</h3>
+          <iframe width="100%" height="180" src="https://www.youtube.com/embed/BwTu056Xx_Q" title="Gusion Gameplay" frameborder="0" allowfullscreen></iframe>
+          <a href="https://www.youtube.com/watch?v=BwTu056Xx_Q" target="_blank" class="youtube-btn">Watch on YouTube</a>
         </div>
         <div class="card">
-          <div class="card-image"><img src="https://via.placeholder.com/400x225/34495e/ecf0f1?text=FPS+Game" alt="Screenshot from a First-Person Shooter game"></div>
-          <h3>Cybernetic Warfare 2077</h3>
-          <p>Fast-paced FPS action with innovative weapons and a gripping futuristic storyline.</p>
-          <a href="#" class="action-btn">Read Full Review</a>
+          <h3>Selena Gameplay</h3>
+          <iframe width="100%" height="180" src="https://www.youtube.com/embed/oUG3cwqbYeI" title="Selena Gameplay" frameborder="0" allowfullscreen></iframe>
+          <a href="https://www.youtube.com/watch?v=oUG3cwqbYeI" target="_blank" class="youtube-btn">Watch on YouTube</a>
         </div>
         <div class="card">
-          <div class="card-image"><img src="https://via.placeholder.com/400x225/34495e/ecf0f1?text=Strategy+Game" alt="Screenshot from a Strategy game"></div>
-          <h3>Galactic Empires: Reborn</h3>
-          <p>Master strategy and conquer the galaxy in this immersive space strategy title.</p>
-          <a href="#" class="action-btn">Read Full Review</a>
+          <h3>Natalia Gameplay</h3>
+          <iframe width="100%" height="180" src="https://www.youtube.com/embed/UW03FyXAo78" title="Natalia Gameplay" frameborder="0" allowfullscreen></iframe>
+          <a href="https://www.youtube.com/watch?v=UW03FyXAo78" target="_blank" class="youtube-btn">Watch on YouTube</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="news-section" id="news">
+  <!-- Guides Section -->
+  <section class="guides-section" id="guides">
     <div class="section-inner">
-      <h2>Breaking Gaming News</h2>
+      <h2>Hero Guides</h2>
       <div class="content-grid">
         <div class="card">
-          <h3>New Patch for Valorant Announced</h3>
-          <p>Get ready for exciting new agent balances and map changes coming next week!</p>
-          <a href="#" class="action-btn">Read More</a>
+          <h3>Coming Soon</h3>
+          <p>Detailed builds, tips, and strategies for your favorite heroes!</p>
         </div>
         <div class="card">
-          <h3>E3 2025: All the Major Reveals</h3>
-          <p>We recap the biggest announcements and trailer drops from this year's E3.</p>
-          <a href="#" class="action-btn">Read More</a>
-        </div>
-        <div class="card">
-          <h3>Indie Spotlight: "Pixel Quest"</h3>
-          <p>Discover this charming pixel-art adventure game making waves on Steam.</p>
-          <a href="#" class="action-btn">Read More</a>
+          <h3>Watch Gameplay</h3>
+          <a href="https://www.youtube.com/@RajeetGurung" target="_blank" class="youtube-btn">YouTube Channel</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="streams-section" id="streams">
+  <!-- Heroes Section -->
+  <section class="heroes-section" id="heroes">
     <div class="section-inner">
-      <h2>Featured Live Streams & Videos</h2>
-      <div class="content-grid">
-        <div class="card">
-          <h3>Pro Player Stream: Apex Legends</h3>
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=abcdefg" title="Apex Legends Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="action-btn">Watch on YouTube</a>
-        </div>
-        <div class="card">
-          <h3>Gameplay Walkthrough: Elden Ring</h3>
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/g2J0fN3c0Qc?si=hijklmn" title="Elden Ring Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <a href="https://www.youtube.com/watch?v=g2J0fN3c0Qc" target="_blank" rel="noopener noreferrer" class="action-btn">Watch on YouTube</a>
-        </div>
-        <div class="card">
-          <h3>Top 5 Gaming Moments of the Week</h3>
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/O-L2d1oNn6E?si=opqrstu" title="Top 5 Gaming Moments" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <a href="https://www.youtube.com/watch?v=O-L2d1oNn6E" target="_blank" rel="noopener noreferrer" class="action-btn">Watch on YouTube</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="games-section" id="games">
-    <div class="section-inner">
-      <h2>Browse Our Games Library</h2>
-      <div class="game-selector">
-        <select onchange="window.open(this.value, '_blank');">
-          <option value="">Select a Game to View</option>
-          <option value="https://store.steampowered.com/app/1172620/Apex_Legends/">Apex Legends</option>
-          <option value="https://store.steampowered.com/app/1245620/ELDEN_RING/">Elden Ring</option>
-          <option value="https://playvalorant.com/en-us/">Valorant</option>
-          <option value="#">Cyberpunk 2077 (Info Page)</option>
-          <option value="#">Grand Theft Auto VI (Coming Soon)</option>
+      <h2>MLBB Heroes</h2>
+      <!-- Hero Selection Dropdown -->
+      <div class="hero-selector">
+        <select>
+          <option value="">Choose a Hero to Watch Gameplay</option>
+          <option value="https://www.youtube.com/watch?v=BwTu056Xx_Q">Gusion</option>
+          <option value="https://www.youtube.com/watch?v=oUG3cwqbYeI">Selena</option>
+          <option value="https://www.youtube.com/watch?v=UW03FyXAo78">Natalia</option>
+          <option value="#">Lancelot (Coming Soon)</option>
+          <option value="#">Karina (Coming Soon)</option>
+          <option value="#">Hayabusa (Coming Soon)</option>
         </select>
       </div>
       <div class="content-grid">
         <div class="card">
-          <div class="card-image"><img src="https://via.placeholder.com/400x225/34495e/ecf0f1?text=Game+A" alt="Cover art for Game A"></div>
-          <h3>Horizon Zero Dawn</h3>
-          <p>Explore a lush post-apocalyptic world filled with robotic creatures.</p>
-          <a href="https://store.steampowered.com/app/1151640/Horizon_Zero_Dawn_Complete_Edition/" target="_blank" rel="noopener noreferrer" class="action-btn">View Game</a>
+          <h3>Gusion</h3>
+          <a href="https://www.youtube.com/watch?v=BwTu056Xx_Q" target="_blank" class="youtube-btn">Watch Gameplay</a>
         </div>
         <div class="card">
-          <div class="card-image"><img src="https://via.placeholder.com/400x225/34495e/ecf0f1?text=Game+B" alt="Cover art for Game B"></div>
-          <h3>Red Dead Redemption 2</h3>
-          <p>A sprawling Western adventure with incredible detail and story.</p>
-          <a href="https://www.rockstargames.com/reddeadredemption2/" target="_blank" rel="noopener noreferrer" class="action-btn">View Game</a>
+          <h3>Selena</h3>
+          <a href="https://www.youtube.com/watch?v=oUG3cwqbYeI" target="_blank" class="youtube-btn">Watch Gameplay</a>
         </div>
         <div class="card">
-          <div class="card-image"><img src="https://via.placeholder.com/400x225/34495e/ecf0f1?text=Game+C" alt="Cover art for Game C"></div>
-          <h3>God of War (2018)</h3>
-          <p>Join Kratos and Atreus on a brutal and emotional journey in Norse mythology.</p>
-          <a href="https://store.steampowered.com/app/1593500/God_of_War/" target="_blank" rel="noopener noreferrer" class="action-btn">View Game</a>
+          <h3>Natalia</h3>
+          <a href="https://www.youtube.com/watch?v=UW03FyXAo78" target="_blank" class="youtube-btn">Watch Gameplay</a>
         </div>
         <div class="card">
-          <div class="card-image"><img src="https://via.placeholder.com/400x225/34495e/ecf0f1?text=Game+D" alt="Cover art for Game D"></div>
-          <h3>Stardew Valley</h3>
-          <p>Build your farm, forge friendships, and live a fulfilling life in the valley.</p>
-          <a href="https://www.stardewvalley.net/" target="_blank" rel="noopener noreferrer" class="action-btn">View Game</a>
+          <h3>Lancelot</h3>
+          <p>Coming Soon</p>
         </div>
         <div class="card">
-          <div class="card-image"><img src="https://via.placeholder.com/400x225/34495e/ecf0f1?text=Game+E" alt="Cover art for Game E"></div>
-          <h3>Minecraft</h3>
-          <p>Unleash your creativity in an endless blocky world of adventure.</p>
-          <a href="https://www.minecraft.net/en-us" target="_blank" rel="noopener noreferrer" class="action-btn">View Game</a>
+          <h3>Karina</h3>
+          <p>Coming Soon</p>
         </div>
         <div class="card">
-          <div class="card-image"><img src="https://via.placeholder.com/400x225/34495e/ecf0f1?text=Game+F" alt="Cover art for Game F"></div>
-          <h3>The Witcher 3: Wild Hunt</h3>
-          <p>Embark on a monster-hunting journey in a morally grey fantasy world.</p>
-          <a href="https://thewitcher.com/us/en/witcher3" target="_blank" rel="noopener noreferrer" class="action-btn">View Game</a>
+          <h3>Hayabusa</h3>
+          <p>Coming Soon</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="contact-section" id="contact">
+  <!-- Query/Contact Section -->
+  <section class="query-section" id="query">
     <div class="section-inner">
-      <form class="contact-form" id="contactForm">
-        <h2>Get in Touch</h2>
+      <form class="query-form" id="queryForm">
+        <h2>Submit Your Query</h2>
         <div class="form-group">
           <label for="name">Your Name</label>
-          <input type="text" id="name" required placeholder="John Doe">
+          <input type="text" id="name" required>
         </div>
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" required placeholder="name@example.com">
+          <input type="email" id="email" required>
         </div>
         <div class="form-group">
-          <label for="
+          <label for="type">Query Type</label>
+          <select id="type" required>
+            <option value="">Select a topic</option>
+            <option>Gameplay Help</option>
+            <option>Partnership</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <div class="form-success" id="formSuccess" style="display:none;">Thank you! Your query has been submitted.</div>
+      </form>
+      <div class="social-links">
+        <a href="https://facebook.com/cedge.mobb" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/917679605732" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/mobb.cedge" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@rajeetgurung" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="mailto:rajeetgurung01@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span class="certified">Certified Rajeet Gurung</span> | 
+    <a href="privacy.html" target="_blank">Privacy Policy</a>
+    <div style="margin-top:8px;">© 2025 Rajeet Gurung | MLBB Content Hub</div>
+  </footer>
+
+  <script>
+    // Close menu on link click (for mobile)
+    function closeMenu() {
+      document.getElementById('nav-toggle').checked = false;
+    }
+    // Keyboard accessibility for label
+    document.querySelector('.nav-toggle-label').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        document.getElementById('nav-toggle').checked = !document.getElementById('nav-toggle').checked;
+      }
+    });
+
+    // Hero dropdown: open gameplay in new tab
+    document.querySelector('.hero-selector select').addEventListener('change', function() {
+      if(this.value && this.value !== "#") window.open(this.value, '_blank');
+    });
+
+    // Simple Query Form Submission (simulate)
+    document.getElementById('queryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').style.display = 'block';
+      setTimeout(function(){
+        document.getElementById('formSuccess').style.display = 'none';
+        document.getElementById('queryForm').reset();
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
