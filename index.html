@@ -4,574 +4,306 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rajeet's MLBB Zone</title>
-  <meta name="description" content="Rajeet's MLBB Zone - Your hub for Mobile Legends gameplay, hero guides, tier lists, and hero-specific videos." />
-  <meta name="keywords" content="Mobile Legends, MLBB, gameplay, hero guides, tier list, MLBB heroes, Rajeet Gurung" />
-  <meta name="author" content="Rajeet Gurung" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root {
-      --blue: #e3f0ff;
-      --orange: #fff4e3;
-      --pink: #ffe3ec;
-      --green: #e3ffe9;
-      --header-bg: #f0f8ff;
-      --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      --border-radius: 14px;
-      --menu-shadow: 0 2px 12px rgba(0,0,0,0.13);
-      --main-font: 'Times New Roman', Times, serif;
-      --main-color: #232323;
-      --accent: #4682B4;
-      --footer-bg: #f0f8ff;
+      --primary: #e94560;
+      --dark: #0f0f0f;
+      --light: #ffffff;
+      --gray: #f0f0f0;
     }
 
     body {
-      font-family: var(--main-font);
-      background: #f7fafd;
-      color: var(--main-color);
       margin: 0;
-      padding: 0;
-      font-size: 15px;
-      font-weight: 400;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
     }
 
-    section h2, .header-section h1 {
-      font-size: 1.15rem;
-    }
-    .card h3 {
-      font-size: 1rem;
-    }
-    input, textarea, select, label, .youtube-btn, .submit-btn {
-      font-size: 0.97rem;
+    header {
+      background: var(--primary);
+      padding: 1rem;
+      color: var(--light);
+      text-align: center;
     }
 
-    /* Kazuki-Style Header and Navigation */
-    .main-header {
-      position: relative;
-      width: 100%;
-      background: var(--header-bg);
+    nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 0 18px;
-      height: 60px;
-      z-index: 1002;
+      align-items: center;
+      background: var(--dark);
+      padding: 0.5rem 1rem;
+      color: var(--light);
     }
-    .site-logo {
-      font-family: var(--main-font);
-      font-size: 1.1rem;
-      color: var(--accent);
-      text-decoration: none;
+
+    .logo {
+      font-size: 1.5rem;
       font-weight: bold;
-      letter-spacing: 1px;
     }
-    .nav-toggle {
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+    }
+
+    .menu-toggle {
       display: none;
     }
-    .nav-toggle-label {
-      display: block;
-      width: 34px;
-      height: 34px;
-      cursor: pointer;
-      position: relative;
-      z-index: 1003;
-      margin-left: auto;
-    }
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-      display: block;
-      background: var(--main-color);
-      height: 3px;
-      width: 26px;
-      border-radius: 2px;
-      position: absolute;
-      left: 4px;
-      transition: all 0.3s cubic-bezier(.86,0,.07,1);
-    }
-    .nav-toggle-label span {
-      top: 15px;
-    }
-    .nav-toggle-label span::before {
-      content: '';
-      top: -8px;
-    }
-    .nav-toggle-label span::after {
-      content: '';
-      top: 8px;
-    }
-    /* Hamburger animation to X */
-    .nav-toggle:checked + .nav-toggle-label span {
-      background: transparent;
-    }
-    .nav-toggle:checked + .nav-toggle-label span::before {
-      transform: rotate(-45deg) translate(-4px, 7px);
-    }
-    .nav-toggle:checked + .nav-toggle-label span::after {
-      transform: rotate(45deg) translate(-4px, -7px);
-    }
-    /* Overlay menu */
-    .main-nav {
-      position: fixed;
-      top: 0;
-      left: 100vw;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(255,255,255,0.98);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: left 0.3s cubic-bezier(.86,0,.07,1);
-      z-index: 1001;
-    }
-    .main-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+
+    .hero {
+      background: url('https://cdn.oneesports.gg/cdn-data/2023/07/MLBB_AnimeSkins_EstesAlucard-1024x576.jpg') center/cover no-repeat;
+      color: var(--light);
       text-align: center;
-    }
-    .main-nav li {
-      margin: 18px 0;
-    }
-    .main-nav a {
-      font-family: var(--main-font);
-      font-size: 1.1rem;
-      color: var(--main-color);
-      text-decoration: none;
-      font-weight: bold;
-      letter-spacing: 1px;
-      transition: color 0.2s;
-    }
-    .main-nav a:hover {
-      color: var(--accent);
-    }
-    .nav-toggle:checked ~ .main-nav {
-      left: 0;
-    }
-    @media (min-width: 900px) {
-      .main-header {
-        height: 70px;
-        padding: 0 48px;
-      }
-      .nav-toggle-label {
-        display: none;
-      }
-      .main-nav {
-        position: static;
-        height: auto;
-        width: auto;
-        background: transparent;
-        display: block;
-        transition: none;
-      }
-      .main-nav ul {
-        display: flex;
-        gap: 30px;
-      }
-      .main-nav li {
-        margin: 0;
-      }
-      .main-nav a {
-        font-size: 1rem;
-        font-weight: normal;
-      }
+      padding: 6rem 1rem;
     }
 
-    /* Header Section */
-    .header-section {
-      background: var(--header-bg);
-      padding: 36px 20px 20px 20px;
-      text-align: center;
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
-      box-shadow: 0 2px 10px rgba(70,130,180,0.04);
-      margin-bottom: 18px;
-    }
-    .header-section h1 {
-      margin: 0 0 10px 0;
-      font-size: 1.15rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      color: var(--accent);
-    }
-    .header-section p {
-      margin: 0;
-      font-size: 1rem;
-      color: #444;
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
-    /* Section Styles */
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
     section {
-      margin: 0 0 28px 0;
+      padding: 3rem 1rem;
     }
-    .video-section { background: var(--blue);}
-    .guides-section { background: var(--orange);}
-    .heroes-section { background: var(--pink);}
-    .query-section { background: var(--green);}
+
     .section-inner {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 28px 8px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-    }
-    section h2 {
-      margin-top: 0;
-      font-size: 1.15rem;
-      color: var(--accent);
-      letter-spacing: 0.5px;
     }
 
-    /* Card Grid */
-    .content-grid {
+    .video-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 14px;
-    }
-    .card {
-      background: #fff;
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-      padding: 14px 8px 10px 8px;
-      text-align: center;
-      transition: box-shadow 0.2s;
-    }
-    .card h3 {
-      margin: 0 0 6px 0;
-      font-size: 1rem;
-      color: var(--accent);
-    }
-    .card p {
-      margin: 0 0 6px 0;
-      color: #555;
-    }
-    .youtube-btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 7px 14px;
-      font-size: 0.97rem;
-      cursor: pointer;
-      margin-top: 7px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .youtube-btn:hover {
-      background: #315c7a;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
     }
 
-    /* Hero Dropdown */
-    .hero-selector {
-      max-width:320px;
-      margin:0 auto 14px auto;
-      text-align:center;
-    }
-    .hero-selector select {
-      width:100%;
-      padding:8px 10px;
-      border:1.5px solid #e0e0e0;
-      border-radius:6px;
-      background:#fff;
-      color:#232323;
-      font-family:'Times New Roman',Times,serif;
-      font-size:0.97rem;
-      transition: border 0.2s;
-    }
-    .hero-selector select:focus {
-      outline: none;
-      border-color: var(--accent);
+    .video-card {
+      border: 1px solid var(--gray);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--light);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    /* Query Form */
-    .query-form {
-      max-width: 400px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 18px 8px 10px 8px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-    }
-    .query-form h2 {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-      color: var(--accent);
-    }
-    .form-group {
-      margin-bottom: 10px;
-      text-align: left;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.97rem;
-      color: #333;
-    }
-    input, textarea, select {
+    .video-card iframe {
       width: 100%;
-      padding: 7px;
-      border: 1px solid #d5d5d5;
-      border-radius: 6px;
-      font-family: var(--main-font);
-      font-size: 0.97rem;
-      background: #f9f9f9;
-      color: #232323;
-      box-sizing: border-box;
-    }
-    textarea { resize: vertical; }
-    .submit-btn {
-      background: var(--accent);
-      color: white;
-      padding: 8px 18px;
+      height: 200px;
       border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.97rem;
-      margin-top: 6px;
-      transition: background 0.2s;
-    }
-    .submit-btn:hover {
-      background: #315c7a;
-    }
-    .form-success {
-      color: #2e8b57;
-      margin-top: 10px;
-      font-size: 0.97rem;
-      text-align: center;
     }
 
-    /* Social Links */
+    .video-card .info {
+      padding: 0.5rem;
+    }
+
+    .hero-selector select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .query-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--gray);
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      background: var(--primary);
+      color: var(--light);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
     .social-links {
       text-align: center;
-      margin: 18px 0 0 0;
+      margin-top: 2rem;
     }
+
     .social-links a {
-      margin: 0 8px;
-      color: var(--accent);
-      font-size: 22px;
-      display: inline-block;
-      transition: color 0.2s;
-    }
-    .social-links a:hover {
-      color: #222;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      color: var(--primary);
     }
 
-    /* Footer */
     .footer {
-      background: var(--footer-bg);
       text-align: center;
-      padding: 14px 5px 8px 5px;
-      color: #777;
-      font-size: 0.97rem;
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-      margin-top: 20px;
-    }
-    .footer .certified {
-      color: var(--accent);
-      font-weight: bold;
-      margin-left: 6px;
-    }
-    .footer a {
-      color: var(--accent);
-      text-decoration: none;
-      margin-left: 5px;
-    }
-    .footer a:hover {
-      text-decoration: underline;
+      background: var(--dark);
+      color: var(--light);
+      padding: 1rem;
     }
 
-    /* Responsive */
-    @media (max-width: 700px) {
-      .header-section h1 { font-size: 1rem;}
-      .section-inner { padding: 10px 2px;}
-      .query-form { padding: 8px 2px;}
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--dark);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        z-index: 1000;
+      }
+
+      .menu-toggle:checked + .nav-links {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .certified {
+      color: var(--primary);
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <!-- Kazuki-Style Main Header and Navigation -->
-  <header class="main-header">
-    <a href="#home" class="site-logo">Rajeet's MLBB Zone</a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu" />
-    <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu" tabindex="0">
-      <span></span>
-    </label>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#home" onclick="closeMenu()">Home</a></li>
-        <li><a href="#videos" onclick="closeMenu()">Videos</a></li>
-        <li><a href="#guides" onclick="closeMenu()">Guides</a></li>
-        <li><a href="#heroes" onclick="closeMenu()">Heroes</a></li>
-        <li><a href="#query" onclick="closeMenu()">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Header Section -->
-  <header class="header-section" id="home">
-    <h1>Rajeet's MLBB Zone</h1>
-    <p>Your Ultimate Mobile Legends Resource</p>
-  </header>
+<header>
+  <h1>Rajeet's MLBB Zone</h1>
+  <p>Gameplay • Hero Guides • YouTube Videos</p>
+</header>
 
-  <!-- Videos Section -->
-  <section class="video-section" id="videos">
-    <div class="section-inner">
-      <h2>Latest Gameplays</h2>
-      <div class="content-grid">
-        <div class="card">
-          <h3>Gusion Gameplay</h3>
-          <iframe width="100%" height="180" src="https://www.youtube.com/embed/BwTu056Xx_Q" title="Gusion Gameplay" frameborder="0" allowfullscreen></iframe>
-          <a href="https://www.youtube.com/watch?v=BwTu056Xx_Q" target="_blank" class="youtube-btn">Watch on YouTube</a>
-        </div>
-        <div class="card">
-          <h3>Selena Gameplay</h3>
-          <iframe width="100%" height="180" src="https://www.youtube.com/embed/oUG3cwqbYeI" title="Selena Gameplay" frameborder="0" allowfullscreen></iframe>
-          <a href="https://www.youtube.com/watch?v=oUG3cwqbYeI" target="_blank" class="youtube-btn">Watch on YouTube</a>
-        </div>
-        <div class="card">
-          <h3>Natalia Gameplay</h3>
-          <iframe width="100%" height="180" src="https://www.youtube.com/embed/UW03FyXAo78" title="Natalia Gameplay" frameborder="0" allowfullscreen></iframe>
-          <a href="https://www.youtube.com/watch?v=UW03FyXAo78" target="_blank" class="youtube-btn">Watch on YouTube</a>
-        </div>
+<nav>
+  <div class="logo">MLBB Zone</div>
+  <input type="checkbox" id="nav-toggle" class="menu-toggle" />
+  <label for="nav-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+  <div class="nav-links">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#videos" onclick="closeMenu()">Videos</a>
+    <a href="#guides" onclick="closeMenu()">Guides</a>
+    <a href="#heroes" onclick="closeMenu()">Heroes</a>
+    <a href="#query" onclick="closeMenu()">Contact</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="section-inner">
+    <h1>Welcome to MLBB Zone</h1>
+    <p>Your ultimate Mobile Legends experience starts here</p>
+    <a href="https://www.youtube.com/@RajeetGurung" target="_blank" class="submit-btn">Watch on YouTube</a>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="section-inner">
+    <h2>Latest Gameplay Videos</h2>
+    <div class="video-container">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/kxqF_s8Ti5M" allowfullscreen></iframe>
+        <div class="info">Jawhead Epic Gameplay</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/Ux6MfQx2x6k" allowfullscreen></iframe>
+        <div class="info">Layla Ranked Match</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/3bcV9eKH9yk" allowfullscreen></iframe>
+        <div class="info">Clint Burst Damage Build</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Guides Section -->
-  <section class="guides-section" id="guides">
-    <div class="section-inner">
-      <h2>Hero Guides</h2>
-      <div class="content-grid">
-        <div class="card">
-          <h3>Coming Soon</h3>
-          <p>Detailed builds, tips, and strategies for your favorite heroes!</p>
-        </div>
-        <div class="card">
-          <h3>Watch Gameplay</h3>
-          <a href="https://www.youtube.com/@RajeetGurung" target="_blank" class="youtube-btn">YouTube Channel</a>
-        </div>
+<section id="guides">
+  <div class="section-inner">
+    <h2>Hero Guides</h2>
+    <ul>
+      <li><strong>Jawhead:</strong> Max the 2nd skill, then 1st. Build damage + defense hybrid. Use Flicker for surprise toss!</li>
+      <li><strong>Layla:</strong> Full crit + attack speed build. Stay in the backline, maximize ultimate range.</li>
+      <li><strong>Clint:</strong> Use passive wisely to double damage. Burst combo: 2 → 1 → basic attack.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="heroes">
+  <div class="section-inner hero-selector">
+    <h2>Choose Your Favorite Hero</h2>
+    <select onchange="window.open(this.value, '_blank')">
+      <option value="#">-- Select a Hero --</option>
+      <option value="https://www.youtube.com/results?search_query=mlbb+jawhead+gameplay">Jawhead</option>
+      <option value="https://www.youtube.com/results?search_query=mlbb+layla+gameplay">Layla</option>
+      <option value="https://www.youtube.com/results?search_query=mlbb+clint+gameplay">Clint</option>
+      <option value="https://www.youtube.com/results?search_query=mlbb+granger+gameplay">Granger</option>
+      <option value="https://www.youtube.com/results?search_query=mlbb+zilong+gameplay">Zilong</option>
+      <option value="https://www.youtube.com/results?search_query=mlbb+beatrix+gameplay">Beatrix</option>
+    </select>
+  </div>
+</section>
+
+<section class="query-section" id="query">
+  <div class="section-inner">
+    <form class="query-form">
+      <h2>Contact Me</h2>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
       </div>
-    </div>
-  </section>
-
-  <!-- Heroes Section -->
-  <section class="heroes-section" id="heroes">
-    <div class="section-inner">
-      <h2>MLBB Heroes</h2>
-      <!-- Hero Selection Dropdown -->
-      <div class="hero-selector">
-        <select>
-          <option value="">Choose a Hero to Watch Gameplay</option>
-          <option value="https://www.youtube.com/watch?v=BwTu056Xx_Q">Gusion</option>
-          <option value="https://www.youtube.com/watch?v=oUG3cwqbYeI">Selena</option>
-          <option value="https://www.youtube.com/watch?v=UW03FyXAo78">Natalia</option>
-          <option value="#">Lancelot (Coming Soon)</option>
-          <option value="#">Karina (Coming Soon)</option>
-          <option value="#">Hayabusa (Coming Soon)</option>
-        </select>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
       </div>
-      <div class="content-grid">
-        <div class="card">
-          <h3>Gusion</h3>
-          <a href="https://www.youtube.com/watch?v=BwTu056Xx_Q" target="_blank" class="youtube-btn">Watch Gameplay</a>
-        </div>
-        <div class="card">
-          <h3>Selena</h3>
-          <a href="https://www.youtube.com/watch?v=oUG3cwqbYeI" target="_blank" class="youtube-btn">Watch Gameplay</a>
-        </div>
-        <div class="card">
-          <h3>Natalia</h3>
-          <a href="https://www.youtube.com/watch?v=UW03FyXAo78" target="_blank" class="youtube-btn">Watch Gameplay</a>
-        </div>
-        <div class="card">
-          <h3>Lancelot</h3>
-          <p>Coming Soon</p>
-        </div>
-        <div class="card">
-          <h3>Karina</h3>
-          <p>Coming Soon</p>
-        </div>
-        <div class="card">
-          <h3>Hayabusa</h3>
-          <p>Coming Soon</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+</section>
 
-  <!-- Query/Contact Section -->
-  <section class="query-section" id="query">
-    <div class="section-inner">
-      <form class="query-form" id="queryForm">
-        <h2>Submit Your Query</h2>
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" required>
-        </div>
-        <div class="form-group">
-          <label for="type">Query Type</label>
-          <select id="type" required>
-            <option value="">Select a topic</option>
-            <option>Gameplay Help</option>
-            <option>Partnership</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-        <div class="form-success" id="formSuccess" style="display:none;">Thank you! Your query has been submitted.</div>
-      </form>
-      <div class="social-links">
-        <a href="https://facebook.com/cedge.mobb" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://wa.me/917679605732" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com/mobb.cedge" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@rajeetgurung" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="mailto:rajeetgurung01@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </section>
+<div class="social-links">
+  <a href="https://www.youtube.com/@RajeetGurung" target="_blank"><i class="fab fa-youtube"></i></a>
+  <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+  <a href="https://wa.me/yourwhatsapplink" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
 
-  <footer class="footer">
-    <span class="certified">Certified Rajeet Gurung</span> | 
-    <a href="privacy.html" target="_blank">Privacy Policy</a>
-    <div style="margin-top:8px;">© 2025 Rajeet Gurung | MLBB Content Hub</div>
-  </footer>
+<footer class="footer">
+  <p>© 2025 Rajeet Gurung | Certified Gamer <span class="certified">MLBB</span> | 
+    <a href="#home">Back to Top</a></p>
+</footer>
 
-  <script>
-    // Close menu on link click (for mobile)
-    function closeMenu() {
-      document.getElementById('nav-toggle').checked = false;
-    }
-    // Keyboard accessibility for label
-    document.querySelector('.nav-toggle-label').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        document.getElementById('nav-toggle').checked = !document.getElementById('nav-toggle').checked;
-      }
-    });
+<script>
+  function closeMenu() {
+    const navToggle = document.getElementById('nav-toggle');
+    if (navToggle) navToggle.checked = false;
+  }
+</script>
 
-    // Hero dropdown: open gameplay in new tab
-    document.querySelector('.hero-selector select').addEventListener('change', function() {
-      if(this.value && this.value !== "#") window.open(this.value, '_blank');
-    });
-
-    // Simple Query Form Submission (simulate)
-    document.getElementById('queryForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('formSuccess').style.display = 'block';
-      setTimeout(function(){
-        document.getElementById('formSuccess').style.display = 'none';
-        document.getElementById('queryForm').reset();
-      }, 3000);
-    });
-  </script>
 </body>
 </html>
